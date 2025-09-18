@@ -1,7 +1,7 @@
 package study.todo_list.usecases.project;
 
 import org.springframework.stereotype.Service;
-import study.todo_list.usecases.project.dtos.dtos.ProjectSaveDto;
+import study.todo_list.usecases.project.dtos.ProjectSaveDto;
 import study.todo_list.domain.entities.ProjectEntity;
 import study.todo_list.domain.interfaces.general.ServiceInterface;
 import study.todo_list.utility.helpers.UuidHelper;

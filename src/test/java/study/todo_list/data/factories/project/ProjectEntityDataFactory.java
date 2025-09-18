@@ -33,19 +33,19 @@ public class ProjectEntityDataFactory {
         );
     }
 
-    public static ProjectEntity project(ProjectEntity input) {
+    public static ProjectEntity generateProject(ProjectEntity input) {
         return generate(input);
     }
 
-    public static ProjectEntity project() {
+    public static ProjectEntity generateProject() {
         return generate(null);
     }
 
-    public static ProjectEntity projectInvalid(ProjectEntity input) {
+    public static ProjectEntity generateProjectInvalid(ProjectEntity input) {
         return generateInvalid(input);
     }
 
-    public static ProjectEntity projectInvalid() {
+    public static ProjectEntity generateProjectInvalid() {
         return generateInvalid(null);
     }
 }
