@@ -20,30 +20,30 @@ public class ProjectDtoDataFactory {
     public static ProjectGetByIdDto generateProjectGetByIdDto(ProjectGetByIdDto input) {
         boolean isInputReceived = input != null;
 
-        return new ProjectGetByIdDto(isInputReceived && input.id() != null ? input.id() : cachedProject.getId());
+        return new ProjectGetByIdDto(isInputReceived && input.id() != null ? input.id() : getCachedProject().getId());
     }
 
     public static ProjectGetByIdDto generateProjectGetByIdDto() {
-        return new ProjectGetByIdDto(cachedProject.getId());
+        return new ProjectGetByIdDto(getCachedProject().getId());
     }
 
     public static ProjectSaveDto generateProjectSaveDto(ProjectSaveDto input) {
         boolean isInputReceived = input != null;
 
         return new ProjectSaveDto(
-                isInputReceived && input.name() != null ? input.name() : cachedProject.getName(),
-                isInputReceived && input.description() != null ? input.description() : cachedProject.getDescription(),
-                isInputReceived && input.deadline() != null ? input.deadline() : cachedProject.getDeadline(),
-                isInputReceived && input.priority() != null ? input.priority() : cachedProject.getPriority()
+                isInputReceived && input.name() != null ? input.name() : getCachedProject().getName(),
+                isInputReceived && input.description() != null ? input.description() : getCachedProject().getDescription(),
+                isInputReceived && input.deadline() != null ? input.deadline() : getCachedProject().getDeadline(),
+                isInputReceived && input.priority() != null ? input.priority() : getCachedProject().getPriority()
         );
     }
 
     public static ProjectSaveDto generateProjectSaveDto() {
         return new ProjectSaveDto(
-                cachedProject.getName(),
-                cachedProject.getDescription(),
-                cachedProject.getDeadline(),
-                cachedProject.getPriority()
+                getCachedProject().getName(),
+                getCachedProject().getDescription(),
+                getCachedProject().getDeadline(),
+                getCachedProject().getPriority()
         );
     }
 
@@ -51,19 +51,19 @@ public class ProjectDtoDataFactory {
         boolean isInputReceived = input != null;
 
         return new ProjectUpdateDto(
-                isInputReceived && input.name() != null ? input.name() : cachedProject.getName(),
-                isInputReceived && input.description() != null ? input.description() : cachedProject.getDescription(),
-                isInputReceived && input.deadline() != null ? input.deadline() : cachedProject.getDeadline(),
-                isInputReceived && input.priority() != null ? input.priority() : cachedProject.getPriority()
+                isInputReceived && input.name() != null ? input.name() : getCachedProject().getName(),
+                isInputReceived && input.description() != null ? input.description() : getCachedProject().getDescription(),
+                isInputReceived && input.deadline() != null ? input.deadline() : getCachedProject().getDeadline(),
+                isInputReceived && input.priority() != null ? input.priority() : getCachedProject().getPriority()
         );
     }
 
     public static ProjectUpdateDto generateProjectUpdateDto() {
         return new ProjectUpdateDto(
-                cachedProject.getName(),
-                cachedProject.getDescription(),
-                cachedProject.getDeadline(),
-                cachedProject.getPriority()
+                getCachedProject().getName(),
+                getCachedProject().getDescription(),
+                getCachedProject().getDeadline(),
+                getCachedProject().getPriority()
         );
     }
 }
