@@ -1,17 +1,20 @@
 package study.todo_list.domain.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import study.todo_list.domain.enums.ProjectPriorityEnum;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 import java.util.UUID;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public class ProjectEntity {
     private UUID id;
     private String name;
     private String description;
     private LocalDateTime createdAt;
-    private Optional<LocalDateTime> deadline;
+    private LocalDateTime deadline;
     private ProjectPriorityEnum priority;
 
     public UUID getId() {
@@ -46,11 +49,11 @@ public class ProjectEntity {
         this.createdAt = createdAt;
     }
 
-    public Optional<LocalDateTime> getDeadline() {
+    public LocalDateTime getDeadline() {
         return deadline;
     }
 
-    public void setDeadline(Optional<LocalDateTime> deadline) {
+    public void setDeadline(LocalDateTime deadline) {
         this.deadline = deadline;
     }
 
