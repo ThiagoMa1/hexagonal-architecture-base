@@ -12,7 +12,6 @@ class ProjectEntityTest {
     ProjectEntity generatedProject = generateProject();
 
     @Test
-    @Disabled
     void shouldCreateProjectWithConstructor() {
         ProjectEntity project = new ProjectEntity(
                 generatedProject.getId(),
@@ -32,7 +31,6 @@ class ProjectEntityTest {
     }
 
     @Test
-    @Disabled
     void shouldCreateProjectWithSetters() {
         ProjectEntity project = new ProjectEntity();
 
