@@ -1,29 +1,45 @@
 package study.todo_list.domain.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import study.todo_list.domain.enums.ProjectPriorityEnum;
 import study.todo_list.domain.enums.TaskStatusEnum;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.UUID;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public class TaskEntity {
     private UUID id;
     private String title;
     private String description;
     private TaskStatusEnum status;
     private LocalDateTime dueDate;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
     private ProjectPriorityEnum priority;
     private UUID projectId;
     private UUID parentTaskId;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+        TaskEntity task = (TaskEntity) o;
+
+        return Objects.equals(id, task.id) &&
+                Objects.equals(title, task.title) &&
+                Objects.equals(description, task.description) &&
+                status == task.status &&
+                Objects.equals(dueDate, task.dueDate) &&
+                priority == task.priority &&
+                Objects.equals(projectId, task.projectId) &&
+                Objects.equals(parentTaskId, task.parentTaskId) &&
+                Objects.equals(createdAt, task.createdAt) &&
+                Objects.equals(updatedAt, task.updatedAt);
     }
 
     public UUID getId() {
@@ -66,14 +82,6 @@ public class TaskEntity {
         this.dueDate = dueDate;
     }
 
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     public ProjectPriorityEnum getPriority() {
         return priority;
     }
@@ -97,4 +105,21 @@ public class TaskEntity {
     public void setParentTaskId(UUID parentTaskId) {
         this.parentTaskId = parentTaskId;
     }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
 }

@@ -8,7 +8,6 @@ import study.todo_list.utility.helpers.UuidHelper;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ProjectGetAllService implements ServiceInterface<Void, List<ProjectEntity>> {
@@ -19,8 +18,8 @@ public class ProjectGetAllService implements ServiceInterface<Void, List<Project
         ProjectEntity project = new ProjectEntity();
         project.setId(UuidHelper.generate());
         project.setName("Random name");
-        project.setDescription(String.valueOf("Testing Description"));
-        project.setDeadline(Optional.of(LocalDateTime.now()));
+        project.setDescription("Testing Description");
+        project.setDeadline(LocalDateTime.now());
         project.setCreatedAt(LocalDateTime.now());
         this.projects = new ArrayList<>();
         projects.add(project);

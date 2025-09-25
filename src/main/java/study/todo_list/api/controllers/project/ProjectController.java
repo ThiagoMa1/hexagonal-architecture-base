@@ -3,8 +3,8 @@ package study.todo_list.api.controllers.project;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import study.todo_list.usecases.project.*;
-import study.todo_list.usecases.project.dtos.dtos.ProjectSaveDto;
-import study.todo_list.usecases.project.dtos.dtos.ProjectUpdateDto;
+import study.todo_list.usecases.project.dtos.ProjectSaveDto;
+import study.todo_list.usecases.project.dtos.ProjectUpdateDto;
 import study.todo_list.domain.entities.ProjectEntity;
 import study.todo_list.utility.validators.IsUUID;
 
