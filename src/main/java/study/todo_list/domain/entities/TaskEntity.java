@@ -6,6 +6,7 @@ import study.todo_list.domain.enums.ProjectPriorityEnum;
 import study.todo_list.domain.enums.TaskStatusEnum;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -21,6 +22,25 @@ public class TaskEntity {
     private UUID parentTaskId;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        TaskEntity task = (TaskEntity) o;
+
+        return Objects.equals(id, task.id) &&
+                Objects.equals(title, task.title) &&
+                Objects.equals(description, task.description) &&
+                status == task.status &&
+                Objects.equals(dueDate, task.dueDate) &&
+                priority == task.priority &&
+                Objects.equals(projectId, task.projectId) &&
+                Objects.equals(parentTaskId, task.parentTaskId) &&
+                Objects.equals(createdAt, task.createdAt) &&
+                Objects.equals(updatedAt, task.updatedAt);
+    }
 
     public UUID getId() {
         return id;
