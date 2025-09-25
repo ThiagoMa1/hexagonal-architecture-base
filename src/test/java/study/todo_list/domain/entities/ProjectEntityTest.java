@@ -1,6 +1,5 @@
 package study.todo_list.domain.entities;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import study.todo_list.data.factories.project.ProjectDtoDataFactory;
 
