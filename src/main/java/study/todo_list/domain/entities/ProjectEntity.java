@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import study.todo_list.domain.enums.ProjectPriorityEnum;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -16,6 +17,21 @@ public class ProjectEntity {
     private LocalDateTime createdAt;
     private LocalDateTime deadline;
     private ProjectPriorityEnum priority;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ProjectEntity project = (ProjectEntity) o;
+
+        return Objects.equals(id, project.id) &&
+                Objects.equals(name, project.name) &&
+                Objects.equals(description, project.description) &&
+                Objects.equals(createdAt, project.createdAt) &&
+                Objects.equals(deadline, project.deadline) &&
+                priority == project.priority;
+    }
 
     public UUID getId() {
         return id;

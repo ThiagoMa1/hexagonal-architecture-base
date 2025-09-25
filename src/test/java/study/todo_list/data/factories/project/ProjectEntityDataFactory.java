@@ -41,6 +41,17 @@ public class ProjectEntityDataFactory {
         return generate(null);
     }
 
+    public static ProjectEntity generateNull() {
+        return new ProjectEntity(
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+    }
+
     public static ProjectEntity generateProjectInvalid(ProjectEntity input) {
         return generateInvalid(input);
     }

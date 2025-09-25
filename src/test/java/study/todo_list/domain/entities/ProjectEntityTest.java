@@ -2,8 +2,8 @@ package study.todo_list.domain.entities;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
+import static study.todo_list.data.factories.project.ProjectEntityDataFactory.generateNull;
 import static study.todo_list.data.factories.project.ProjectEntityDataFactory.generateProject;
 
 class ProjectEntityTest {
@@ -20,12 +20,7 @@ class ProjectEntityTest {
                 generatedProject.getPriority()
         );
 
-        assertEquals(generatedProject.getId(), project.getId());
-        assertEquals(generatedProject.getName(), project.getName());
-        assertEquals(generatedProject.getDescription(), project.getDescription());
-        assertEquals(generatedProject.getCreatedAt(), project.getCreatedAt());
-        assertEquals(generatedProject.getDeadline(), project.getDeadline());
-        assertEquals(generatedProject.getPriority(), project.getPriority());
+        assertEquals(generatedProject, project);
     }
 
     @Test
@@ -39,12 +34,7 @@ class ProjectEntityTest {
         project.setDeadline(generatedProject.getDeadline());
         project.setPriority(generatedProject.getPriority());
 
-        assertEquals(generatedProject.getId(), project.getId());
-        assertEquals(generatedProject.getName(), project.getName());
-        assertEquals(generatedProject.getDescription(), project.getDescription());
-        assertEquals(generatedProject.getCreatedAt(), project.getCreatedAt());
-        assertEquals(generatedProject.getDeadline(), project.getDeadline());
-        assertEquals(generatedProject.getPriority(), project.getPriority());
+        assertEquals(generatedProject, project);
     }
 
     @Test
@@ -56,11 +46,6 @@ class ProjectEntityTest {
         generatedProject.setDeadline(null);
         generatedProject.setPriority(null);
 
-        assertNull(generatedProject.getId());
-        assertNull(generatedProject.getName());
-        assertNull(generatedProject.getDescription());
-        assertNull(generatedProject.getCreatedAt());
-        assertNull(generatedProject.getDeadline());
-        assertNull(generatedProject.getPriority());
+        assertEquals(generatedProject, generateNull());
     }
 }
