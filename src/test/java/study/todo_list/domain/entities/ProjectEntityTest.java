@@ -1,7 +1,6 @@
 package study.todo_list.domain.entities;
 
 import org.junit.jupiter.api.Test;
-import study.todo_list.data.factories.project.ProjectDtoDataFactory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;

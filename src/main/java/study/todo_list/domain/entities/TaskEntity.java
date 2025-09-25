@@ -1,30 +1,26 @@
 package study.todo_list.domain.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import study.todo_list.domain.enums.ProjectPriorityEnum;
 import study.todo_list.domain.enums.TaskStatusEnum;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public class TaskEntity {
     private UUID id;
     private String title;
     private String description;
     private TaskStatusEnum status;
     private LocalDateTime dueDate;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
     private ProjectPriorityEnum priority;
     private UUID projectId;
     private UUID parentTaskId;
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
     public UUID getId() {
         return id;
@@ -66,14 +62,6 @@ public class TaskEntity {
         this.dueDate = dueDate;
     }
 
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     public ProjectPriorityEnum getPriority() {
         return priority;
     }
@@ -97,4 +85,21 @@ public class TaskEntity {
     public void setParentTaskId(UUID parentTaskId) {
         this.parentTaskId = parentTaskId;
     }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
 }
