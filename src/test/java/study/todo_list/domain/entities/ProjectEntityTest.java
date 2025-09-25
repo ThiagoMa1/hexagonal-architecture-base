@@ -50,8 +50,6 @@ class ProjectEntityTest {
 
     @Test
     void shouldUpdateDataToNull() {
-        ProjectDtoDataFactory.generateProjectGetByIdDto();
-        ProjectDtoDataFactory.generateProjectGetByIdDto();
         generatedProject.setId(null);
         generatedProject.setName(null);
         generatedProject.setDescription(null);
