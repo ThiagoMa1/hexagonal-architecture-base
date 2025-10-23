@@ -34,7 +34,7 @@ public class ProjectDtoDataFactory {
                 isInputReceived && input.name() != null ? input.name() : getCachedProject().getName(),
                 isInputReceived && input.description() != null ? input.description() : getCachedProject().getDescription(),
                 isInputReceived && input.deadline() != null ? input.deadline() : getCachedProject().getDeadline(),
-                isInputReceived && input.priority() != null ? input.priority() : getCachedProject().getPriority()
+                isInputReceived && input.priority() != null ? input.priority() : getCachedProject().getPriority().toString()
         );
     }
 
@@ -43,7 +43,7 @@ public class ProjectDtoDataFactory {
                 getCachedProject().getName(),
                 getCachedProject().getDescription(),
                 getCachedProject().getDeadline(),
-                getCachedProject().getPriority()
+                getCachedProject().getPriority().toString()
         );
     }
 
