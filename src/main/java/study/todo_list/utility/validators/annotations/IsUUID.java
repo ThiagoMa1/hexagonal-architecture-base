@@ -1,4 +1,4 @@
-package study.todo_list.utility.validators;
+package study.todo_list.utility.validators.annotations;
 
 import jakarta.validation.Payload;
 import jakarta.validation.constraints.NotNull;
