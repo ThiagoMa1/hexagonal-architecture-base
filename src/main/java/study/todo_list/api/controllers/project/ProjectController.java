@@ -6,7 +6,7 @@ import study.todo_list.usecases.project.*;
 import study.todo_list.usecases.project.dtos.ProjectSaveDto;
 import study.todo_list.usecases.project.dtos.ProjectUpdateDto;
 import study.todo_list.domain.entities.ProjectEntity;
-import study.todo_list.utility.validators.IsUUID;
+import study.todo_list.utility.validators.annotations.IsUUID;
 
 import java.util.List;
 import java.util.Optional;
@@ -36,7 +36,6 @@ public class ProjectController {
 
     @GetMapping("/{id}")
     public Optional<ProjectEntity> getById(@Valid @PathVariable("id") @IsUUID UUID id) throws ClassNotFoundException {
-        System.out.println(id);
         return this.projectGetByIdService.execute(id);
     }
 
