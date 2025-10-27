@@ -37,7 +37,7 @@ public class ProjectEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, createdAt, deadline, priority);
+        return Objects.hash(id, name, description, createdAt, updatedAt, deadline, priority);
     }
 
     public UUID getId() {
