@@ -2,7 +2,7 @@ package todo_list.domain.entities;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 import static todo_list.data.factories.project.ProjectEntityDataFactory.generateNull;
 import static todo_list.data.factories.project.ProjectEntityDataFactory.generateProject;
 
@@ -20,7 +20,7 @@ class ProjectEntityTest {
                 generatedProject.getPriority()
         );
 
-        assertEquals(generatedProject, project);
+        assertThat(project).isEqualTo(generatedProject);
     }
 
     @Test
@@ -34,7 +34,7 @@ class ProjectEntityTest {
         project.setDeadline(generatedProject.getDeadline());
         project.setPriority(generatedProject.getPriority());
 
-        assertEquals(generatedProject, project);
+        assertThat(project).isEqualTo(generatedProject);
     }
 
     @Test
@@ -46,6 +46,6 @@ class ProjectEntityTest {
         generatedProject.setDeadline(null);
         generatedProject.setPriority(null);
 
-        assertEquals(generatedProject, generateNull());
+        assertThat(generatedProject).isEqualTo(generateNull());
     }
 }

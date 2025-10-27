@@ -12,11 +12,11 @@ import java.time.LocalDateTime;
 
 @Service
 public class ProjectSaveService implements ServiceInterface<ProjectSaveDto, ProjectEntity> {
-    private final ProjectRepositoryInterface projectRepository;
-
-    public ProjectSaveService(ProjectRepositoryInterface projectRepositoryInterface) {
-        this.projectRepository = projectRepositoryInterface;
-    }
+//    private final ProjectRepositoryInterface projectRepository;
+//
+//    public ProjectSaveService(ProjectRepositoryInterface projectRepositoryInterface) {
+//        this.projectRepository = projectRepositoryInterface;
+//    }
 
     @Override
     public ProjectEntity execute(ProjectSaveDto input) {
@@ -29,6 +29,6 @@ public class ProjectSaveService implements ServiceInterface<ProjectSaveDto, Proj
                 ProjectPriorityEnum.valueOf(input.priority())
         );
 
-        return this.projectRepository.save(project);
+        return project;
     }
 }
