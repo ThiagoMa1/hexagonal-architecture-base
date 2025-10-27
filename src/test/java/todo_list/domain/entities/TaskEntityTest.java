@@ -2,7 +2,7 @@ package todo_list.domain.entities;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 import static todo_list.data.factories.task.TaskEntityDataFactory.generateNull;
 import static todo_list.data.factories.task.TaskEntityDataFactory.generateTask;
 
@@ -24,7 +24,7 @@ class TaskEntityTest {
                 generatedTask.getUpdatedAt()
         );
 
-        assertEquals(generatedTask, task);
+        assertThat(task).isEqualTo(generatedTask);
     }
 
     @Test
@@ -42,7 +42,7 @@ class TaskEntityTest {
         task.setCreatedAt(generatedTask.getCreatedAt());
         task.setUpdatedAt(generatedTask.getUpdatedAt());
 
-        assertEquals(generatedTask, task);
+        assertThat(task).isEqualTo(generatedTask);
     }
 
     @Test
@@ -58,6 +58,6 @@ class TaskEntityTest {
         generatedTask.setCreatedAt(null);
         generatedTask.setUpdatedAt(null);
 
-        assertEquals(generatedTask, generateNull());
+        assertThat(generateNull()).isEqualTo(generatedTask);
     }
 }

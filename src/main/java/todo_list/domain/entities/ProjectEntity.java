@@ -33,6 +33,11 @@ public class ProjectEntity {
                 priority == project.priority;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, createdAt, deadline, priority);
+    }
+
     public UUID getId() {
         return id;
     }
