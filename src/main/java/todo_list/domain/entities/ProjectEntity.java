@@ -15,6 +15,7 @@ public class ProjectEntity {
     private String name;
     private String description;
     private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
     private LocalDateTime deadline;
     private ProjectPriorityEnum priority;
 
@@ -29,6 +30,7 @@ public class ProjectEntity {
                 Objects.equals(name, project.name) &&
                 Objects.equals(description, project.description) &&
                 Objects.equals(createdAt, project.createdAt) &&
+                Objects.equals(updatedAt, project.updatedAt) &&
                 Objects.equals(deadline, project.deadline) &&
                 priority == project.priority;
     }
@@ -79,5 +81,13 @@ public class ProjectEntity {
 
     public void setPriority(ProjectPriorityEnum priority) {
         this.priority = priority;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }
