@@ -2,7 +2,6 @@ package todo_list.api.controllers.project;
 
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
-import study.todo_list.usecases.project.*;
 import todo_list.usecases.project.*;
 import todo_list.usecases.project.dtos.ProjectSaveDto;
 import todo_list.usecases.project.dtos.ProjectUpdateDto;
